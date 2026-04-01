@@ -46,7 +46,7 @@ export default function App() {
             <span style={{
               flex: 1,
               textDecoration: t.done ? "line-through" : "none",
-              color: t.done ? "#999" : "#000",
+              color: t.done ? "#999" : "#1a73e8",
             }}>
               {t.text}
             </span>
