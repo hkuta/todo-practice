@@ -120,7 +120,7 @@ export default function TodoEducation() {
     setExecFlow((prev) => [...prev.slice(-30), { key: blockKey, time, label: CODE_BLOCKS[blockKey].label }]);
     setActiveBlock(blockKey);
     clearTimeout(flowTimerRef.current);
-    flowTimerRef.current = setTimeout(() => setActiveBlock("idle"), Infinity);
+    //flowTimerRef.current = setTimeout(() => setActiveBlock("idle"), Infinity);
   }, []);
 
   useEffect(() => {
@@ -139,23 +139,23 @@ export default function TodoEducation() {
       setTodos((prev) => [...prev, { id: Date.now(), text, done: false }]);
       setText("");
       pushFlow("addExecute");
-      setTimeout(() => pushFlow("render"), 200);
-      setTimeout(() => pushFlow("countRender"), 400);
-    }, 300);
+      setTimeout(() => pushFlow("render"), 2000);
+      setTimeout(() => pushFlow("countRender"), 4000);
+    }, 2000);
   };
 
   const toggle = (id) => {
     setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
     pushFlow("toggle");
-    setTimeout(() => pushFlow("render"), 200);
-    setTimeout(() => pushFlow("countRender"), 400);
+    setTimeout(() => pushFlow("render"), 2000);
+    setTimeout(() => pushFlow("countRender"), 4000);
   };
 
   const remove = (id) => {
     setTodos((prev) => prev.filter((t) => t.id !== id));
     pushFlow("remove");
-    setTimeout(() => pushFlow("render"), 200);
-    setTimeout(() => pushFlow("countRender"), 400);
+    setTimeout(() => pushFlow("render"), 2000);
+    setTimeout(() => pushFlow("countRender"), 4000);
   };
 
   const handleKeyDown = (e) => {
