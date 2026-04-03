@@ -120,7 +120,7 @@ export default function TodoEducation() {
     setExecFlow((prev) => [...prev.slice(-30), { key: blockKey, time, label: CODE_BLOCKS[blockKey].label }]);
     setActiveBlock(blockKey);
     clearTimeout(flowTimerRef.current);
-    flowTimerRef.current = setTimeout(() => setActiveBlock("idle"), 3000);
+    flowTimerRef.current = setTimeout(() => setActiveBlock("idle"), Infinity);
   }, []);
 
   useEffect(() => {
